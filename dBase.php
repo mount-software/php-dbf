@@ -58,6 +58,7 @@ class dBase implements ArrayAccess, Iterator, Countable
     /**
      * @inheritdoc
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return @dbase_numrecords($this->_dbaseId);
@@ -66,6 +67,7 @@ class dBase implements ArrayAccess, Iterator, Countable
     /**
      * @inheritdoc
      */
+    #[\ReturnTypeWillChange]
     public function current()
     {
         return @dbase_get_record_with_names($this->_dbaseId, $this->_recordNumber);
@@ -74,6 +76,7 @@ class dBase implements ArrayAccess, Iterator, Countable
     /**
      * @inheritdoc
      */
+    #[\ReturnTypeWillChange]
     public function next()
     {
         $this->_recordNumber++;
@@ -82,6 +85,7 @@ class dBase implements ArrayAccess, Iterator, Countable
     /**
      * @inheritdoc
      */
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return $this->_recordNumber;
@@ -90,6 +94,7 @@ class dBase implements ArrayAccess, Iterator, Countable
     /**
      * @inheritdoc
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return $this->_recordNumber <= count($this);
@@ -98,6 +103,7 @@ class dBase implements ArrayAccess, Iterator, Countable
     /**
      * @inheritdoc
      */
+    #[\ReturnTypeWillChange]
     public function rewind()
     {
         $this->_recordNumber = 1;
@@ -106,6 +112,7 @@ class dBase implements ArrayAccess, Iterator, Countable
     /**
      * @inheritdoc
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         if (null !== $offset) {
@@ -118,6 +125,7 @@ class dBase implements ArrayAccess, Iterator, Countable
     /**
      * @inheritdoc
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         if ($this->offsetExists($offset)) {
@@ -130,6 +138,7 @@ class dBase implements ArrayAccess, Iterator, Countable
     /**
      * @inheritdoc
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if ($this->offsetExists($offset)) {
@@ -142,6 +151,7 @@ class dBase implements ArrayAccess, Iterator, Countable
     /**
      * @inheritdoc
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         if (isset($this[$offset])) {
