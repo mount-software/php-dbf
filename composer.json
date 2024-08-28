@@ -1,5 +1,5 @@
 {
-    "name": "memclutter/php-dbf",
+    "name": "mount-software/php-dbf",
     "description": "Some php classes for easy work with dBase databases.",
     "type": "library",
     "license": "MIT",
